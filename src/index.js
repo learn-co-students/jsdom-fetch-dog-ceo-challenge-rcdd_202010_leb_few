@@ -3,6 +3,33 @@ console.log('%c HI', 'color: firebrick')
 const dogList = document.querySelector("#dog-breeds")
 const dropdown = document.querySelector("#breed-dropdown")
 
+
+fetch("https://dog.ceo/api/breeds/image/random/4")
+  .then(resp => resp.json())
+  .then(json => function(json){
+    const main = document.querySelector('div')
+  json.forEach(j => {
+    const h2 = document.createElement('img')
+    h2.innerHTML = json[j]
+    main.appendChild(h2)
+  })
+  });
+  
+  fetch('https://dog.ceo/api/breeds/list/all')
+  .then(resp => resp.json())
+  .then(json => function(json){
+    const main = document.querySelector('ul')
+  json.forEach(j => {
+    const h2 = document.createElement('li')
+    h2.innerHTML = json[j]
+    h2.addEventListener("click",function(){
+      h2.textcontent.style.color="red"
+    })
+    main.appendChild(h2)
+  })
+  });
+  
+  
 // Approach 1: Stateful
 // store all the breeds in an array
 // filter the array
@@ -10,7 +37,7 @@ const dropdown = document.querySelector("#breed-dropdown")
 // use that list to display
 
 // Approach 2: DOM Source Of Truth
-// iterate over all the lis
+// iterate over all the list
 // if they don't start with the letter, hide them with CSS
 
 // State
