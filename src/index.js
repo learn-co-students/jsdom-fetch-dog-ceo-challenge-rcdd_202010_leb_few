@@ -2,6 +2,20 @@ console.log('%c HI', 'color: firebrick')
 
 const dogList = document.querySelector("#dog-breeds")
 const dropdown = document.querySelector("#breed-dropdown")
+const imgUrl = "https://dog.ceo/api/breeds/image/random/4";
+const breedUrl = 'https://dog.ceo/api/breeds/list/all'
+
+
+/*function challengeOne(){
+fetch(imgUrl)
+.then(function(response) {
+  return response.json();
+})
+.then(function(json){
+ renderAllImages(json);
+})
+}*/
+
 
 // Approach 1: Stateful
 // store all the breeds in an array
@@ -82,7 +96,6 @@ function loadImages() {
     .then(renderAllImages)
 }
 
-
 function renderBreed(breed) {
   const li = document.createElement("li")
   li.textContent = breed
@@ -103,5 +116,10 @@ function loadBreeds() {
     })
 }
 
-loadBreeds()
-loadImages()
+
+document.addEventListener('DOMContentLoaded', function () {
+loadBreeds();
+loadImages();
+});
+
+
