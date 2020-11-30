@@ -3,6 +3,8 @@ console.log('%c HI', 'color: firebrick')
 const dogList = document.querySelector("#dog-breeds")
 const dropdown = document.querySelector("#breed-dropdown")
 
+
+
 // Approach 1: Stateful
 // store all the breeds in an array
 // filter the array
@@ -25,7 +27,7 @@ dropdown.addEventListener("change", event => {
   const filteredBreeds = breedList.filter(function(breed) {
     return breed.startsWith(letter)
   })
-  
+
   // (also, clear the list)
   dogList.innerHTML = ''
 
@@ -67,7 +69,7 @@ function renderImage(imageUrl) {
 function renderAllImages(data) {
   // when we have the data
   const images = data.message
-    
+
   // append to the DOM
   images.forEach(imageUrl => {
     renderImage(imageUrl)
