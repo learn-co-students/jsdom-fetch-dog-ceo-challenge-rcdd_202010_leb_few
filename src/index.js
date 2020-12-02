@@ -8,6 +8,16 @@ const dropdown = document.querySelector("#breed-dropdown")
 // filter the array
 // (also, clear the list)
 // use that list to display
+function getDogImages() {
+  fetch("https://dog.ceo/api/breeds/image/random/4")
+    .then(resp => resp.json())
+    .then(json =>
+      json.message.forEach(pic => {
+        const img = document.createElement("img");
+        img.src = pic;
+       dogList.appendChild(img);
+      })
+    );}
 
 // Approach 2: DOM Source Of Truth
 // iterate over all the lis
