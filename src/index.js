@@ -3,6 +3,11 @@ console.log('%c HI', 'color: firebrick')
 const dogList = document.querySelector("#dog-breeds")
 const dropdown = document.querySelector("#breed-dropdown")
 
+
+
+
+
+
 // Approach 1: Stateful
 // store all the breeds in an array
 // filter the array
@@ -105,3 +110,5 @@ function loadBreeds() {
 
 loadBreeds()
 loadImages()
+
+
